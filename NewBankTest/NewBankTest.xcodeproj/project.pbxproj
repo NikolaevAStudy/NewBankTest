@@ -13,7 +13,6 @@
 		58B06B712822F9C900D10885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B06B702822F9C900D10885 /* AppDelegate.swift */; };
 		58B06B732822F9C900D10885 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B06B722822F9C900D10885 /* SceneDelegate.swift */; };
 		58B06B782822F9C900D10885 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B06B762822F9C900D10885 /* Main.storyboard */; };
-		58B06B7D2822F9CA00D10885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B06B7C2822F9CA00D10885 /* Assets.xcassets */; };
 		58B06B802822F9CA00D10885 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B06B7E2822F9CA00D10885 /* LaunchScreen.storyboard */; };
 		58B06B912823F37F00D10885 /* NewBankTestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58B06B8F2823F37F00D10885 /* NewBankTestModel.xcdatamodeld */; };
 		58B06B932824018D00D10885 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B06B922824018D00D10885 /* AuthViewController.swift */; };
@@ -31,7 +30,6 @@
 		58B06B702822F9C900D10885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58B06B722822F9C900D10885 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		58B06B772822F9C900D10885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		58B06B7C2822F9CA00D10885 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58B06B7F2822F9CA00D10885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58B06B812822F9CA00D10885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58B06B902823F37F00D10885 /* NewBankTestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewBankTestModel.xcdatamodel; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 				58D7D6032832CD650027BC59 /* AuthView */,
 				5893D26D282AC846006EF026 /* MainView */,
 				58B06B762822F9C900D10885 /* Main.storyboard */,
-				58B06B7C2822F9CA00D10885 /* Assets.xcassets */,
 				58B06B7E2822F9CA00D10885 /* LaunchScreen.storyboard */,
 				58B06B812822F9CA00D10885 /* Info.plist */,
 			);
@@ -190,7 +187,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				58B06B802822F9CA00D10885 /* LaunchScreen.storyboard in Resources */,
-				58B06B7D2822F9CA00D10885 /* Assets.xcassets in Resources */,
 				58B06B782822F9C900D10885 /* Main.storyboard in Resources */,
 				5893D271282AC87E006EF026 /* MainViewController.xib in Resources */,
 			);
