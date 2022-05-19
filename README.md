@@ -1,8 +1,13 @@
 # NewBankTest
 Экран авторизации
 
-![Image alt](https://4.downloader.disk.yandex.ru/preview/2d653c79b470239600e8821398644ec193c4cb898f8203120761ee98ec16448c/inf/zyxfjGBb3QPTrpEONMRQzgmOrg_CmQkYha73Tu3pOfv350-0A85dnsquljsoWQIq1JkVGhNvW5y4zjhS09b9Pw%3D%3D?uid=1123508052&filename=auth%20screen.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1123508052&tknv=v2&size=2166x1446)
+<img src="https://s263vla.storage.yandex.net/rdisk/07386a16d225cd6fa41e149cb59f01b1f5278fa63a773fac411a02b22bb4caeb/6286cba2/pFPVrlIcxqVO3HUaz8794vCSikRR878ABvJxaKtarji5Yy6-fGKvrQRpC0n0icXqR_dBSes45nuqMD5OGvvV9w==?uid=1123508052&filename=auth%20screen.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1123508052&fsize=88773&hid=93bbac7ecb708d9d8389b48023ff3a5a&media_type=image&tknv=v2&etag=d324b92d486c97d714035e6ff6404a3e&rtoken=txOhxPo4OIXK&force_default=yes&ycrid=na-f4ed1e21893ebe9844131d0ce0fbf309-downloader14e&ts=5df6550b0ac80&s=7518ec65e7d324bd081bcbffa229f4dafb2e728aa17a0fbbd2922d2400921008&pb=U2FsdGVkX19WBgwDnonCj0mtYZ46lOR1egUO-C4dxpEMG5eZwIH9zqzV4uSnC_M-thUFI9zbnf3JfYZx7o3bFi79NzOTkgIV1LuTQVXjDLA" width="200" height="365">
 
+Экран пользователей
 
+<img src="https://s443vla.storage.yandex.net/rdisk/f9305a5408996d0eeb9d81d6d9ae5dd8af8edb557c988c1f431ae36a29bb46b5/6286cdb1/pFPVrlIcxqVO3HUaz8794h_dEx4zxi7lzj-yrIG7F2g_q8yVqedYsbhi-VyC_S83b8u8XdXa8QV9tziEa34Dtw==?uid=1123508052&filename=user%20screen.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1123508052&fsize=114390&hid=edaa730aa781a8b5deddd67e2b21ce2c&media_type=image&tknv=v2&etag=a531c27915ee2f52373ce2efda06d6bc&rtoken=JbYQTjJvqP62&force_default=yes&ycrid=na-264aba689cea44794cade50c864b7ec7-downloader24f&ts=5df65701a0e40&s=f8837f8ad236ba936c24bede451486a00695cb0519e469d3c17b66afbfbcf044&pb=U2FsdGVkX1-HMjlut6NjPiP0QZB1qJDf_9_EYCyjDo335niosmpmG_kvEYKyTtnUU_B81JMJuYO7s8IXtxHeFoGmy9NSgz-qdEhsQVnOdBI" width="200" height="365">
 
-![alt text](https://disk.yandex.ru/i/ueISXS8m1Rhqgg)
+Экран карт
+
+<img src="https://s849sas.storage.yandex.net/rdisk/7b6d5678a637ecd470d8412ec376aaa3adacba0622042c18e99d27707e12cd75/6286cde2/pFPVrlIcxqVO3HUaz8794o-EtsioLzAfSfCnnWG9ue3Eb0iwFoX7N9_HA98zUh8NCQ0N-OVH3rDCYaRInFOtRw==?uid=1123508052&filename=card%20screen.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1123508052&fsize=93609&hid=b2cb364feec08990e98dd6aa1c3bdcb0&media_type=image&tknv=v2&etag=89709a286c4f468e35b995fa408b0a99&rtoken=EbMtoe0WycmE&force_default=yes&ycrid=na-a06579d0fd02270d7feae1ef943975a7-downloader24f&ts=5df657305bc80&s=8d31847c61dc149ec93060869d0501a0481d45586e33924dd0999dd0b47b5dc7&pb=U2FsdGVkX1-W_EJDaeImAtGzUC5tLLOxTDnvKOmV6ZmuFcw74m4NdkR_ccmnqoBIrBLDPery3qkzKHvwrAKQZ_VVL7roDw9pncSidLgy8Ac" width="200" height="365">
+
