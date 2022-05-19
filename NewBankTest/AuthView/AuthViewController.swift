@@ -40,20 +40,13 @@ class AuthViewController: UIViewController {
         for user in 0...userCount-1{
             let username = users[user].value(forKeyPath: "login") as! String
             let pass = users[user].value(forKeyPath: "password") as! String
+            let id = users[user].value(forKeyPath: "id") as! String
             if username == loginTextField.text!
                 && pass == passwordTextField.text!{
                 authFlg = true
-                let avatarURL: URL
-                let defaultURL: URL = URL(string: "https://www.planetware.com/photos-large/F/france-paris-eiffel-tower.jpg")!
-                let userURL = users[user].value(forKeyPath: "avatarurl") as? URL
-                if userURL == nil {
-                    avatarURL = defaultURL
-                }else{
-                    avatarURL = userURL!
-                }
                 //let UserViewController = storyboard?.instantiateViewController(identifier: "UsersViewController")
                 //navigationController?.pushViewController(UserViewController!, animated: true)
-                let MainViewController = MainViewController(avatarURL: avatarURL, nibName: "MainViewController", bundle: self.nibBundle)
+                let MainViewController = MainViewController(contactid: id , nibName: "MainViewController", bundle: self.nibBundle)
                 navigationController?.pushViewController(MainViewController, animated: true)
                 break
             }

@@ -1,26 +1,29 @@
 //
-//  UsersViewController.swift
+//  AssetViewController.swift
 //  NewBankTest
 //
-//  Created by Александр Николаев on 05.05.2022.
+//  Created by Александр Николаев on 18.05.2022.
 //
 
 import UIKit
 import CoreData
 
-class UsersViewController: UIViewController{
+class AssetViewController: UIViewController {
+    var login:String = ""
+    var password:String = ""
+    var contactid:String = ""
+    
     @IBOutlet weak var tableView: UITableView!
-    var user: [NSManagedObject] = []
+    var asset: [NSManagedObject] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Пользователи"
-        tableView.allowsSelection = true
+        title = "Карты"
     }
     
     override func didReceiveMemoryWarning() {
            super.didReceiveMemoryWarning()
-           print("Память утекает UsersViewController")
+           print("Память утекает AssetViewController")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -31,45 +34,37 @@ class UsersViewController: UIViewController{
         }
 
         let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Contact")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Asset")
+        let predicate = NSPredicate(format: "contactid == %@", self.contactid)
+        fetchRequest.predicate = predicate
 
         do {
-            user = try managedContext.fetch(fetchRequest)
+            asset = try managedContext.fetch(fetchRequest)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
-    
+
     @IBAction func addName(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Новый пользователь", message: "Добавление нового пользователя", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Новый пользователь", message: "Добавление новой карты", preferredStyle: .alert)
 
         let saveAction = UIAlertAction(title: "Сохранить", style: .default) { [unowned self] action in
 
         guard let textField = alert.textFields?.first,
-          let nameToSave = textField.text else {
+          let cardToSave = textField.text else {
             return
         }
         guard let textField2 = alert.textFields?[1],
-          let passToSave = textField2.text else {
+          let amountToSave = textField2.text else {
         return
-        }
-        guard let textField3 = alert.textFields?.last,
-          let urlToSave = textField3.text else {
-        return
-        }
-        let imageURL: URL
-        if urlToSave == ""{
-            imageURL = URL(string: "https://www.planetware.com/photos-large/F/france-paris-eiffel-tower.jpg")!
-        }else{
-            imageURL = URL(string: urlToSave)!
         }
 
-        self.save(name: nameToSave,pass: passToSave,url: imageURL)
+
+        self.save(cardnum: cardToSave,amount: amountToSave)
         self.tableView.reloadData()
         }
-
+        
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
-        alert.addTextField()
         alert.addTextField()
         alert.addTextField()
         alert.addAction(saveAction)
@@ -78,21 +73,21 @@ class UsersViewController: UIViewController{
         present(alert, animated: true)
     }
 
-    func save(name: String,pass: String, url: URL) {
+    func save(cardnum: String,amount: String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
         let managedContext = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Contact", in: managedContext)!
-        let contact = NSManagedObject(entity: entity, insertInto: managedContext)
+        let entity = NSEntityDescription.entity(forEntityName: "Asset", in: managedContext)!
+        let card = NSManagedObject(entity: entity, insertInto: managedContext)
         let id = UUID().uuidString
-        contact.setValue(name, forKeyPath: "login")
-        contact.setValue(pass, forKeyPath: "password")
-        contact.setValue(id, forKey: "id")
-        contact.setValue(url, forKey: "avatarurl")
+        card.setValue(cardnum, forKeyPath: "cardnum")
+        card.setValue(amount, forKeyPath: "amount")
+        card.setValue(id, forKey: "id")
+        card.setValue(self.contactid, forKey: "contactid")
         do {
             try managedContext.save()
-            user.append(contact)
+            asset.append(card)
         } catch let error as NSError {
             print("Could not save. \(error.code)")
             if error.code == 133021{
@@ -106,21 +101,20 @@ class UsersViewController: UIViewController{
 }
 
 // MARK: - UITableViewDataSource
-extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
+extension AssetViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return user.count
+        return asset.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let contact = user[indexPath.row]
+        let card = asset[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let login = contact.value(forKeyPath: "login") as! String
-        let password = contact.value(forKeyPath: "password") as! String
-        let id = contact.value(forKeyPath: "id") as? String
-        let url = contact.value(forKeyPath: "avatarurl") as? String
-        let cellstr = login + " " + password + " " + (id ?? " ") + " " + (url ?? " ")
+        let login = self.login
+        let cardnum = card.value(forKeyPath: "cardnum") as! String
+        let amount = card.value(forKeyPath: "amount") as? String
+        let cellstr = login + " " + cardnum + " " + (amount ?? " ")
         cell.textLabel?.text = cellstr
         return cell
     }
@@ -130,28 +124,14 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let managedContext = appDelegate.persistentContainer.viewContext
-            managedContext.delete(user[indexPath.row])
+            managedContext.delete(asset[indexPath.row])
                 do {
                     try managedContext.save();
-                    user.remove(at: indexPath.row)
+                    asset.remove(at: indexPath.row)
                     tableView.reloadData()
                 } catch let error as NSError {
                     print("Could not delete. \(error), \(error.userInfo)")
                 }
         }
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("did select:      \(indexPath.row)  ")
-        let contact = user[indexPath.row]
-        let login = contact.value(forKeyPath: "login") as! String
-        let password = contact.value(forKeyPath: "password") as! String
-        let id = contact.value(forKeyPath: "id") as! String
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let AssetViewController = storyboard.instantiateViewController(identifier: "AssetViewController") as? AssetViewController else { return }
-        AssetViewController.password = password
-        AssetViewController.login = login
-        AssetViewController.contactid = id
-        navigationController?.pushViewController(AssetViewController, animated: true)
     }
 }

@@ -6,17 +6,19 @@
 //
 
 import UIKit
+import CoreData
 
 class MainViewController: UIViewController {
 
 
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet var viewCollections: [UIView]!
-    var avatarURL:URL
+    var contactid:String
+    var users: [NSManagedObject] = []
     
         
-    init(avatarURL: URL, nibName: String?, bundle: Bundle?) {
-        self.avatarURL = avatarURL
+    init(contactid: String, nibName: String?, bundle: Bundle?) {
+        self.contactid = contactid
         super.init(nibName: nibName, bundle: bundle)
     }
     
@@ -27,7 +29,22 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let imageURL: URL = avatarURL
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Contact")
+        let predicate = NSPredicate(format: " id == %@", contactid)
+        fetchRequest.predicate = predicate
+
+        do {
+            users = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        let imageURL: URL = users[0].value(forKeyPath: "avatarurl") as! URL
+        //let imageURL: URL = avatarURL
         let queue = DispatchQueue.global(qos: .utility)
         let date = Date()
         let calendar = Calendar.current
