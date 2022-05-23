@@ -58,4 +58,9 @@ class AuthViewController: UIViewController {
             present(alert, animated: true)
         }
     }
+    @IBAction func newUserButton(_ sender: UIButton) {
+        let vc = NewUserViewController()
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
 }

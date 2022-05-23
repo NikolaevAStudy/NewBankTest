@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		58155FC4283808DB00E7D514 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58155FC2283808DB00E7D514 /* Contact+CoreDataClass.swift */; };
 		58155FC5283808DB00E7D514 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58155FC3283808DB00E7D514 /* Contact+CoreDataProperties.swift */; };
+		58155FC7283C003500E7D514 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58155FC6283C003500E7D514 /* NewUserViewController.swift */; };
 		5893D26C282A7C04006EF026 /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5893D26B282A7C04006EF026 /* CustomUITextField.swift */; };
 		5893D270282AC87E006EF026 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5893D26E282AC87E006EF026 /* MainViewController.swift */; };
 		5893D271282AC87E006EF026 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5893D26F282AC87E006EF026 /* MainViewController.xib */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		58155FC2283808DB00E7D514 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
 		58155FC3283808DB00E7D514 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		58155FC6283C003500E7D514 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		5893D26B282A7C04006EF026 /* CustomUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
 		5893D26E282AC87E006EF026 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5893D26F282AC87E006EF026 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58155FC8283C003B00E7D514 /* NewUser */ = {
+			isa = PBXGroup;
+			children = (
+				58155FC6283C003500E7D514 /* NewUserViewController.swift */,
+			);
+			path = NewUser;
+			sourceTree = "<group>";
+		};
 		5893D26D282AC846006EF026 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +93,7 @@
 		58B06B6F2822F9C900D10885 /* NewBankTest */ = {
 			isa = PBXGroup;
 			children = (
+				58155FC8283C003B00E7D514 /* NewUser */,
 				58C02F722835654E00A4FE03 /* AssetView */,
 				58D7D6062832CDBA0027BC59 /* DefaultFiles */,
 				58D7D6052832CDA80027BC59 /* UsersView */,
@@ -214,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5893D270282AC87E006EF026 /* MainViewController.swift in Sources */,
+				58155FC7283C003500E7D514 /* NewUserViewController.swift in Sources */,
 				58B06B912823F37F00D10885 /* NewBankTestModel.xcdatamodeld in Sources */,
 				58B06B95282401F900D10885 /* UsersViewController.swift in Sources */,
 				58B06B932824018D00D10885 /* AuthViewController.swift in Sources */,

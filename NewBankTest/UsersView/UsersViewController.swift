@@ -44,7 +44,7 @@ class UsersViewController: UIViewController{
         let alert = UIAlertController(title: "Новый пользователь", message: "Добавление нового пользователя", preferredStyle: .alert)
 
         let saveAction = UIAlertAction(title: "Сохранить", style: .default) { [unowned self] action in
-
+            
         guard let textField = alert.textFields?.first,
           let nameToSave = textField.text else {
             return
@@ -63,6 +63,7 @@ class UsersViewController: UIViewController{
         }
 
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
+        
         alert.addTextField()
         alert.addTextField()
         alert.addTextField()
@@ -109,11 +110,12 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
 
         let contact = user[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        var content = cell.defaultContentConfiguration()
         let login = contact.value(forKeyPath: "login") as! String
         let password = contact.value(forKeyPath: "password") as! String
-        let id = contact.value(forKeyPath: "id") as? String
-        let cellstr = login + " " + password + " " + (id ?? " ")
-        cell.textLabel?.text = cellstr
+        content.text = login
+        content.secondaryText = password
+        cell.contentConfiguration = content
         return cell
     }
     
@@ -137,11 +139,9 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
         print("did select:      \(indexPath.row)  ")
         let contact = user[indexPath.row]
         let login = contact.value(forKeyPath: "login") as! String
-        let password = contact.value(forKeyPath: "password") as! String
         let id = contact.value(forKeyPath: "id") as! String
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let AssetViewController = storyboard.instantiateViewController(identifier: "AssetViewController") as? AssetViewController else { return }
-        AssetViewController.password = password
         AssetViewController.login = login
         AssetViewController.contactid = id
         navigationController?.pushViewController(AssetViewController, animated: true)

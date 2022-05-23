@@ -9,11 +9,11 @@ import UIKit
 import CoreData
 
 class AssetViewController: UIViewController {
-    var login:String = ""
-    var password:String = ""
-    var contactid:String = ""
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var login:String = ""
+    var contactid:String = ""
     var asset: [NSManagedObject] = []
 
     override func viewDidLoad() {
@@ -111,11 +111,14 @@ extension AssetViewController: UITableViewDataSource {
 
         let card = asset[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        var content = cell.defaultContentConfiguration()
         let login = self.login
         let cardnum = card.value(forKeyPath: "cardnum") as! String
         let amount = card.value(forKeyPath: "amount") as? String
-        let cellstr = login + " " + cardnum + " " + (amount ?? " ")
-        cell.textLabel?.text = cellstr
+        let RUB = "\u{20BD}"
+        content.text = login + " " + "*" + cardnum.suffix(4)
+        content.secondaryText = amount! + " \(RUB)"
+        cell.contentConfiguration = content
         return cell
     }
     

@@ -97,10 +97,31 @@ extension MainViewController: UITableViewDataSource {
 
         let card = asset[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        var content = cell.defaultContentConfiguration()
         let cardnum = card.value(forKeyPath: "cardnum") as! String
         let amount = card.value(forKeyPath: "amount") as? String
-        let cellstr = "Номер карты " + cardnum + " Сумма " + (amount ?? " ")
-        cell.textLabel?.text = cellstr
+        let RUB = "\u{20BD}"
+        content.text = (amount ?? " ") + RUB
+        content.prefersSideBySideTextAndSecondaryText = true
+        content.secondaryText = "Номер карты *" + cardnum.suffix(4)
+        let imageURL: URL = URL(string: "https://www.vbr.ru/products/w5aa4j144mk.png")!
+        let queue = DispatchQueue.global(qos: .utility)
+        let date = Date()
+        let calendar = Calendar.current
+        let nansec = calendar.component(.nanosecond, from: date)
+            queue.async{
+              if let data = try? Data(contentsOf: imageURL){
+                  DispatchQueue.main.async {
+                      content.image = UIImage(data: data)
+                      let date1 = Date()
+                      let calendar1 = Calendar.current
+                      let nanse1 = calendar1.component(.nanosecond, from: date1)
+                      cell.contentConfiguration = content
+                      print("Show image data " + String(nanse1/1000000))
+                  }
+                  print("Did download  image data " + String(nansec/1000000))
+              }
+          }
         return cell
     }
     
