@@ -13,9 +13,11 @@
         </uniquenessConstraints>
     </entity>
     <entity name="Contact" representedClassName=".Contact" syncable="YES">
-        <attribute name="avatarurl" optional="YES" attributeType="URI"/>
+        <attribute name="firstname" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="lastname" optional="YES" attributeType="String"/>
         <attribute name="login" optional="YES" attributeType="String"/>
+        <attribute name="middlename" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
         <relationship name="asset" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Asset" inverseName="contact" inverseEntity="Asset"/>
         <uniquenessConstraints>
@@ -29,6 +31,6 @@
     </entity>
     <elements>
         <element name="Asset" positionX="158.015625" positionY="5.40234375" width="128" height="104"/>
-        <element name="Contact" positionX="-54" positionY="-9" width="128" height="104"/>
+        <element name="Contact" positionX="-54" positionY="-9" width="128" height="134"/>
     </elements>
 </model>

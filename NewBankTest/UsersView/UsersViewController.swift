@@ -53,18 +53,12 @@ class UsersViewController: UIViewController{
           let passToSave = textField2.text else {
         return
         }
-        guard let textField3 = alert.textFields?.last,
+        /*guard let textField3 = alert.textFields?.last,
           let urlToSave = textField3.text else {
         return
-        }
-        let imageURL: URL
-        if urlToSave == ""{
-            imageURL = URL(string: "https://www.planetware.com/photos-large/F/france-paris-eiffel-tower.jpg")!
-        }else{
-            imageURL = URL(string: urlToSave)!
-        }
+        }*/
 
-        self.save(name: nameToSave,pass: passToSave,url: imageURL)
+        self.save(name: nameToSave,pass: passToSave)
         self.tableView.reloadData()
         }
 
@@ -78,7 +72,7 @@ class UsersViewController: UIViewController{
         present(alert, animated: true)
     }
 
-    func save(name: String,pass: String, url: URL) {
+    func save(name: String,pass: String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
@@ -89,7 +83,6 @@ class UsersViewController: UIViewController{
         contact.setValue(name, forKeyPath: "login")
         contact.setValue(pass, forKeyPath: "password")
         contact.setValue(id, forKey: "id")
-        contact.setValue(url, forKey: "avatarurl")
         do {
             try managedContext.save()
             user.append(contact)
@@ -119,8 +112,7 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
         let login = contact.value(forKeyPath: "login") as! String
         let password = contact.value(forKeyPath: "password") as! String
         let id = contact.value(forKeyPath: "id") as? String
-        let url = contact.value(forKeyPath: "avatarurl") as? String
-        let cellstr = login + " " + password + " " + (id ?? " ") + " " + (url ?? " ")
+        let cellstr = login + " " + password + " " + (id ?? " ")
         cell.textLabel?.text = cellstr
         return cell
     }

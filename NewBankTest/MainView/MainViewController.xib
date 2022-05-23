@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="NewBankTest" customModuleProvider="target">
             <connections>
-                <outlet property="avatarImage" destination="pSm-ne-ogR" id="1jp-yO-NdL"/>
+                <outlet property="cardsTableView" destination="1bf-yw-cIX" id="dUt-an-UvY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="ynD-st-8dl"/>
                 <outletCollection property="viewCollections" destination="WFH-7V-at6" collectionClass="NSMutableArray" id="L2R-Y0-BWP"/>
                 <outletCollection property="viewCollections" destination="Li8-p3-tyg" collectionClass="NSMutableArray" id="MNn-Ml-nlQ"/>
@@ -23,15 +23,28 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFH-7V-at6">
-                    <rect key="frame" x="20" y="229" width="374" height="174"/>
+                    <rect key="frame" x="20" y="129" width="374" height="174"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1bf-yw-cIX">
+                            <rect key="frame" x="1" y="1" width="372" height="172"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="r3W-Qh-Ifh"/>
+                                <outlet property="delegate" destination="-1" id="J0x-m1-iac"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="174" id="4E0-eW-ueH"/>
+                        <constraint firstItem="1bf-yw-cIX" firstAttribute="top" secondItem="WFH-7V-at6" secondAttribute="top" constant="1" id="QJS-gF-Gpi"/>
                         <constraint firstAttribute="width" constant="374" id="dwb-Zo-Gb2"/>
+                        <constraint firstAttribute="trailing" secondItem="1bf-yw-cIX" secondAttribute="trailing" constant="1" id="egJ-qG-w2Z"/>
+                        <constraint firstItem="1bf-yw-cIX" firstAttribute="leading" secondItem="WFH-7V-at6" secondAttribute="leading" constant="1" id="iTh-oi-a2G"/>
+                        <constraint firstAttribute="bottom" secondItem="1bf-yw-cIX" secondAttribute="bottom" constant="1" id="se7-SJ-UZC"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Li8-p3-tyg">
-                    <rect key="frame" x="20" y="433" width="170" height="150"/>
+                    <rect key="frame" x="20" y="333" width="170" height="150"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="170" id="35V-zE-x0D"/>
@@ -39,33 +52,24 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AqR-uI-Qx6">
-                    <rect key="frame" x="224" y="433" width="170" height="150"/>
+                    <rect key="frame" x="224" y="333" width="170" height="150"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="170" id="GbB-fh-Qwk"/>
                         <constraint firstAttribute="height" constant="150" id="XP4-o4-OgI"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pSm-ne-ogR" customClass="AvatarUIImageView" customModule="NewBankTest" customModuleProvider="target">
-                    <rect key="frame" x="244" y="49" width="150" height="150"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="150" id="JfT-hQ-Av3"/>
-                        <constraint firstAttribute="height" constant="150" id="dBf-GU-sHo"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemRedColor"/>
             <constraints>
                 <constraint firstItem="AqR-uI-Qx6" firstAttribute="top" secondItem="WFH-7V-at6" secondAttribute="bottom" constant="30" id="6h6-um-JIm"/>
-                <constraint firstItem="pSm-ne-ogR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="9ud-3r-9KS"/>
-                <constraint firstItem="WFH-7V-at6" firstAttribute="top" secondItem="pSm-ne-ogR" secondAttribute="bottom" constant="30" id="ABB-3D-LG5"/>
                 <constraint firstItem="WFH-7V-at6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="EWf-LW-EaP"/>
                 <constraint firstItem="Li8-p3-tyg" firstAttribute="top" secondItem="WFH-7V-at6" secondAttribute="bottom" constant="30" id="Kin-42-ico"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AqR-uI-Qx6" secondAttribute="trailing" constant="20" id="Mlc-3O-hNK"/>
                 <constraint firstItem="Li8-p3-tyg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="bbw-ie-Dg4"/>
+                <constraint firstItem="WFH-7V-at6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="85" id="ur6-LT-XZ3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WFH-7V-at6" secondAttribute="trailing" constant="20" id="wA4-6x-8uR"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pSm-ne-ogR" secondAttribute="trailing" constant="20" id="wbK-hB-YLK"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="77.678571428571431"/>
         </view>

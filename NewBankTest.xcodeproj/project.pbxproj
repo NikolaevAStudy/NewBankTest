@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58155FC4283808DB00E7D514 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58155FC2283808DB00E7D514 /* Contact+CoreDataClass.swift */; };
+		58155FC5283808DB00E7D514 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58155FC3283808DB00E7D514 /* Contact+CoreDataProperties.swift */; };
 		5893D26C282A7C04006EF026 /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5893D26B282A7C04006EF026 /* CustomUITextField.swift */; };
 		5893D270282AC87E006EF026 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5893D26E282AC87E006EF026 /* MainViewController.swift */; };
 		5893D271282AC87E006EF026 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5893D26F282AC87E006EF026 /* MainViewController.xib */; };
@@ -20,12 +22,11 @@
 		58C02F742835656F00A4FE03 /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C02F732835656F00A4FE03 /* AssetViewController.swift */; };
 		58C02F792836B1EF00A4FE03 /* Asset+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C02F772836B1EF00A4FE03 /* Asset+CoreDataClass.swift */; };
 		58C02F7A2836B1EF00A4FE03 /* Asset+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C02F782836B1EF00A4FE03 /* Asset+CoreDataProperties.swift */; };
-		58D7D60228316B460027BC59 /* AvatarUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D7D60128316B460027BC59 /* AvatarUIImageView.swift */; };
-		58D7D6092832D7370027BC59 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D7D6072832D7370027BC59 /* Contact+CoreDataClass.swift */; };
-		58D7D60A2832D7370027BC59 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D7D6082832D7370027BC59 /* Contact+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58155FC2283808DB00E7D514 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
+		58155FC3283808DB00E7D514 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5893D26B282A7C04006EF026 /* CustomUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
 		5893D26E282AC87E006EF026 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5893D26F282AC87E006EF026 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -41,9 +42,6 @@
 		58C02F732835656F00A4FE03 /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
 		58C02F772836B1EF00A4FE03 /* Asset+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asset+CoreDataClass.swift"; sourceTree = "<group>"; };
 		58C02F782836B1EF00A4FE03 /* Asset+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asset+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		58D7D60128316B460027BC59 /* AvatarUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarUIImageView.swift; sourceTree = "<group>"; };
-		58D7D6072832D7370027BC59 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
-		58D7D6082832D7370027BC59 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +60,6 @@
 			children = (
 				5893D26E282AC87E006EF026 /* MainViewController.swift */,
 				5893D26F282AC87E006EF026 /* MainViewController.xib */,
-				58D7D60128316B460027BC59 /* AvatarUIImageView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -119,10 +116,10 @@
 		58D7D6042832CD920027BC59 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				58155FC2283808DB00E7D514 /* Contact+CoreDataClass.swift */,
+				58155FC3283808DB00E7D514 /* Contact+CoreDataProperties.swift */,
 				58C02F772836B1EF00A4FE03 /* Asset+CoreDataClass.swift */,
 				58C02F782836B1EF00A4FE03 /* Asset+CoreDataProperties.swift */,
-				58D7D6072832D7370027BC59 /* Contact+CoreDataClass.swift */,
-				58D7D6082832D7370027BC59 /* Contact+CoreDataProperties.swift */,
 				58B06B8F2823F37F00D10885 /* NewBankTestModel.xcdatamodeld */,
 			);
 			path = Model;
@@ -220,14 +217,13 @@
 				58B06B912823F37F00D10885 /* NewBankTestModel.xcdatamodeld in Sources */,
 				58B06B95282401F900D10885 /* UsersViewController.swift in Sources */,
 				58B06B932824018D00D10885 /* AuthViewController.swift in Sources */,
-				58D7D6092832D7370027BC59 /* Contact+CoreDataClass.swift in Sources */,
 				58C02F742835656F00A4FE03 /* AssetViewController.swift in Sources */,
-				58D7D60228316B460027BC59 /* AvatarUIImageView.swift in Sources */,
 				5893D26C282A7C04006EF026 /* CustomUITextField.swift in Sources */,
+				58155FC5283808DB00E7D514 /* Contact+CoreDataProperties.swift in Sources */,
 				58C02F7A2836B1EF00A4FE03 /* Asset+CoreDataProperties.swift in Sources */,
 				58C02F792836B1EF00A4FE03 /* Asset+CoreDataClass.swift in Sources */,
 				58B06B712822F9C900D10885 /* AppDelegate.swift in Sources */,
-				58D7D60A2832D7370027BC59 /* Contact+CoreDataProperties.swift in Sources */,
+				58155FC4283808DB00E7D514 /* Contact+CoreDataClass.swift in Sources */,
 				58B06B732822F9C900D10885 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

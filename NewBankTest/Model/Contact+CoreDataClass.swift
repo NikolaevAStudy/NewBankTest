@@ -2,7 +2,7 @@
 //  Contact+CoreDataClass.swift
 //  NewBankTest
 //
-//  Created by Александр Николаев on 16.05.2022.
+//  Created by Александр Николаев on 20.05.2022.
 //
 //
 
