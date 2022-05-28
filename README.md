@@ -1,7 +1,7 @@
 # NewBankTest
 Экран авторизации
 
-<img src="https://s263vla.storage.yandex.net/rdisk/07386a16d225cd6fa41e149cb59f01b1f5278fa63a773fac411a02b22bb4caeb/6286cba2/pFPVrlIcxqVO3HUaz8794vCSikRR878ABvJxaKtarji5Yy6-fGKvrQRpC0n0icXqR_dBSes45nuqMD5OGvvV9w==?uid=1123508052&filename=auth%20screen.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1123508052&fsize=88773&hid=93bbac7ecb708d9d8389b48023ff3a5a&media_type=image&tknv=v2&etag=d324b92d486c97d714035e6ff6404a3e&rtoken=txOhxPo4OIXK&force_default=yes&ycrid=na-f4ed1e21893ebe9844131d0ce0fbf309-downloader14e&ts=5df6550b0ac80&s=7518ec65e7d324bd081bcbffa229f4dafb2e728aa17a0fbbd2922d2400921008&pb=U2FsdGVkX19WBgwDnonCj0mtYZ46lOR1egUO-C4dxpEMG5eZwIH9zqzV4uSnC_M-thUFI9zbnf3JfYZx7o3bFi79NzOTkgIV1LuTQVXjDLA" width="200" height="365">
+<img src="https://s788sas.storage.yandex.net/rdisk/9c06fac23dadda4c76f3820cdbfbac65eeb2972acb0b556c0b9145d5b9ed00f3/629291e4/pFPVrlIcxqVO3HUaz8794gm6hynlAqpGxogjDbE9LoPcUZxr2bmeaa1W3Lwq8ytqGpiweSR3JHbRRAeA-Ajr4A==?uid=1123508052&filename=Simulator%20Screen%20Shot%20-%20iPhone%2012%20-%202022-05-28%20at%2020.16.28.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1123508052&fsize=85345&hid=e92e9107f1dab197d354ac204cb66fca&media_type=image&tknv=v2&etag=c8f0afc2c734b695a25a429a1c6cbe85&rtoken=YYco1QsxyaYf&force_default=yes&ycrid=na-23d8d4adaf72fec33a5433b283dfc30d-downloader17e&ts=5e018fa9d4100&s=c2028d875faaefa941b2b6705f051b91373329609708b5b2152fb8b687ed711c&pb=U2FsdGVkX1_gwJmAOdDgqLHueRIit_OGl7BTQhsDSInfNXtTgSM3dAPGQQ9VpRtKn9CnO1cozEmBLJ2Ia6SmKWdKsCkpkZ4HycepC9e4wBU" width="200" height="365">
 
 Экран пользователей
 
