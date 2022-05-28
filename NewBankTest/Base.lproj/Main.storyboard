@@ -84,7 +84,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cxD-KB-bdi">
-                                <rect key="frame" x="1" y="89" width="414" height="806"/>
+                                <rect key="frame" x="1" y="45" width="414" height="850"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="1tU-uE-b6G" detailTextLabel="Xx5-yo-lan" style="IBUITableViewCellStyleValue1" id="q71-Qf-Xfj">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
@@ -225,41 +225,12 @@
                                     <constraint firstItem="vRJ-q6-SXW" firstAttribute="top" secondItem="PIL-aw-5Dg" secondAttribute="bottom" constant="26" id="yog-HA-29n"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SN6-Ax-Wgj">
-                                <rect key="frame" x="135.5" y="558" width="143.5" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="es6-AX-S8a"/>
-                                    <constraint firstAttribute="height" constant="31" id="gbr-qU-iYU"/>
-                                </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Пользователь">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Ffj-RP-cy6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTD-wa-u6W">
-                                <rect key="frame" x="117" y="644" width="203" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Новый пользователь">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="newUserButton:" destination="pQT-Ta-9hb" eventType="touchUpInside" id="zYw-mh-wqv"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rl6-De-TdU"/>
                         <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
-                            <constraint firstItem="rl6-De-TdU" firstAttribute="bottom" secondItem="SN6-Ax-Wgj" secondAttribute="bottom" constant="273" id="3es-FR-f4C"/>
                             <constraint firstItem="NlZ-K5-wfI" firstAttribute="centerX" secondItem="rl6-De-TdU" secondAttribute="centerX" id="Vb0-9B-p2i"/>
                             <constraint firstItem="NlZ-K5-wfI" firstAttribute="top" secondItem="rl6-De-TdU" secondAttribute="top" constant="150" id="Xz1-0N-Cve"/>
-                            <constraint firstItem="SN6-Ax-Wgj" firstAttribute="centerX" secondItem="NlZ-K5-wfI" secondAttribute="centerX" id="t4n-t7-qX0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gR1-kk-suD"/>

@@ -12,6 +12,8 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var cardsTableView: UITableView!
     
+    @IBOutlet weak var userButton: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet var viewCollections: [UIView]!
     var contactid:String
@@ -30,52 +32,22 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let contactFetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Contact")
-        let assetFetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Asset")
-        let contactPredicate = NSPredicate(format: " id == %@", contactid)
-        let assetPredicate = NSPredicate(format: " contactid == %@", contactid)
-        contactFetchRequest.predicate = contactPredicate
-        assetFetchRequest.predicate = assetPredicate
-
-        do {
-            users = try managedContext.fetch(contactFetchRequest)
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
-        //let imageURL: URL = users[0].value(forKeyPath: "avatarurl") as! URL
-        /*let queue = DispatchQueue.global(qos: .utility)
-        let date = Date()
-        let calendar = Calendar.current
-        let nansec = calendar.component(.nanosecond, from: date)
-            queue.async{
-              if let data = try? Data(contentsOf: imageURL){
-                  DispatchQueue.main.async { [self] in
-                      avatarImage.image = UIImage(data: data)
-                      let date1 = Date()
-                      let calendar1 = Calendar.current
-                      let nanse1 = calendar1.component(.nanosecond, from: date1)
-                      print("Show image data " + String(nanse1/1000000))
-                  }
-                  print("Did download  image data " + String(nansec/1000000))
-              }
-          }*/
-        do {
-            self.asset = try managedContext.fetch(assetFetchRequest)
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
+        users = fetchRecord(entityName: "Contact", searchSpec: " id == %@", valueForSerch: contactid)
+        asset = fetchRecord(entityName: "Asset", searchSpec: " contactid == %@", valueForSerch: contactid)
+        let fio = getFIO()
+        nameLabel.text = fio
+    }
+    private func getFIO() ->String{
+        let lastName = users[0].value(forKeyPath: "lastname") as! String
+        let firstName = users[0].value(forKeyPath: "firstname") as! String
+        let middleName = users[0].value(forKeyPath: "middlename") as! String
+        return lastName + " " + firstName + " " + middleName
     }
     override func didReceiveMemoryWarning() {
            super.didReceiveMemoryWarning()
            print("Память утекает MainViewController")
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIView.animate(withDuration: 1.0,delay: 0.2 ,animations: {
@@ -84,6 +56,42 @@ class MainViewController: UIViewController {
             }
         })
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIView.animate(withDuration: 1.0,delay: 0.2 ,animations: {
+            for viewInd in self.viewCollections.indices {
+                self.viewCollections[viewInd].center.x += 500
+            }
+        })
+    }
+    
+    // MARK: - fetch
+    private func fetchRecord(entityName:String,searchSpec:String,valueForSerch:String) -> [NSManagedObject]{
+        var fetchResult: [NSManagedObject] = []
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return fetchResult
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
+        if valueForSerch != "" {
+            let predicate = NSPredicate(format: searchSpec, valueForSerch)
+            fetchRequest.predicate = predicate
+        }
+        do {
+            fetchResult = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        return fetchResult
+        
+    }
+    
+    @IBAction func openUserView(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let resultViewController = storyBoard.instantiateViewController(withIdentifier: "UsersViewController")
+        self.navigationController?.pushViewController(resultViewController, animated: true)
+    }
+    
 }
 // MARK: - UITableViewDataSource
 extension MainViewController: UITableViewDataSource {
@@ -123,21 +131,5 @@ extension MainViewController: UITableViewDataSource {
               }
           }
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-
-        if editingStyle == UITableViewCell.EditingStyle.delete {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let managedContext = appDelegate.persistentContainer.viewContext
-            managedContext.delete(asset[indexPath.row])
-                do {
-                    try managedContext.save();
-                    asset.remove(at: indexPath.row)
-                    tableView.reloadData()
-                } catch let error as NSError {
-                    print("Could not delete. \(error), \(error.userInfo)")
-                }
-        }
     }
 }

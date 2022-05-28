@@ -41,7 +41,7 @@ class AuthViewController: UIViewController {
             let username = users[user].value(forKeyPath: "login") as! String
             let pass = users[user].value(forKeyPath: "password") as! String
             let id = users[user].value(forKeyPath: "id") as! String
-            if username == loginTextField.text!
+            if username == loginTextField.text!.uppercased()
                 && pass == passwordTextField.text!{
                 authFlg = true
                 //let UserViewController = storyboard?.instantiateViewController(identifier: "UsersViewController")

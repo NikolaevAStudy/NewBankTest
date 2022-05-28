@@ -15,7 +15,12 @@ class UsersViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Пользователи"
-        tableView.allowsSelection = true
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchContact()
     }
     
     override func didReceiveMemoryWarning() {
@@ -23,9 +28,14 @@ class UsersViewController: UIViewController{
            print("Память утекает UsersViewController")
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
+    // MARK: - add new user
+    @IBAction func addName(_ sender: UIBarButtonItem) {
+        let vc = NewUserViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    // MARK: - fetchContact
+    private func fetchContact(){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
@@ -37,64 +47,6 @@ class UsersViewController: UIViewController{
             user = try managedContext.fetch(fetchRequest)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
-        }
-    }
-    
-    @IBAction func addName(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Новый пользователь", message: "Добавление нового пользователя", preferredStyle: .alert)
-
-        let saveAction = UIAlertAction(title: "Сохранить", style: .default) { [unowned self] action in
-            
-        guard let textField = alert.textFields?.first,
-          let nameToSave = textField.text else {
-            return
-        }
-        guard let textField2 = alert.textFields?[1],
-          let passToSave = textField2.text else {
-        return
-        }
-        /*guard let textField3 = alert.textFields?.last,
-          let urlToSave = textField3.text else {
-        return
-        }*/
-
-        self.save(name: nameToSave,pass: passToSave)
-        self.tableView.reloadData()
-        }
-
-        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
-        
-        alert.addTextField()
-        alert.addTextField()
-        alert.addTextField()
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-
-        present(alert, animated: true)
-    }
-
-    func save(name: String,pass: String) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Contact", in: managedContext)!
-        let contact = NSManagedObject(entity: entity, insertInto: managedContext)
-        let id = UUID().uuidString
-        contact.setValue(name, forKeyPath: "login")
-        contact.setValue(pass, forKeyPath: "password")
-        contact.setValue(id, forKey: "id")
-        do {
-            try managedContext.save()
-            user.append(contact)
-        } catch let error as NSError {
-            print("Could not save. \(error.code)")
-            if error.code == 133021{
-                let alert = UIAlertController(title: "Ошибка", message: "Пользователь с таким логином уже существует", preferredStyle: .alert)
-                let cancelAction = UIAlertAction(title: "ОК", style: .cancel)
-                alert.addAction(cancelAction)
-                present(alert, animated: true)
-            }
         }
     }
 }

@@ -19,34 +19,17 @@ class AssetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Карты"
+        fetchAsset()
     }
     
     override func didReceiveMemoryWarning() {
            super.didReceiveMemoryWarning()
            print("Память утекает AssetViewController")
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Asset")
-        let predicate = NSPredicate(format: "contactid == %@", self.contactid)
-        fetchRequest.predicate = predicate
-
-        do {
-            asset = try managedContext.fetch(fetchRequest)
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
-    }
-
+    
+    // MARK: - add new card
     @IBAction func addName(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Новый пользователь", message: "Добавление новой карты", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Новая карта", message: "Добавление новой карты", preferredStyle: .alert)
 
         let saveAction = UIAlertAction(title: "Сохранить", style: .default) { [unowned self] action in
 
@@ -72,7 +55,8 @@ class AssetViewController: UIViewController {
 
         present(alert, animated: true)
     }
-
+    
+    // MARK: - save new card
     func save(cardnum: String,amount: String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -96,6 +80,24 @@ class AssetViewController: UIViewController {
                 alert.addAction(cancelAction)
                 present(alert, animated: true)
             }
+        }
+    }
+    
+    // MARK: - fetchAsset
+    private func fetchAsset(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Asset")
+        let predicate = NSPredicate(format: "contactid == %@", self.contactid)
+        fetchRequest.predicate = predicate
+
+        do {
+            asset = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
 }
