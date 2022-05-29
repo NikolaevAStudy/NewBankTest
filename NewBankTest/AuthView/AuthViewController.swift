@@ -14,8 +14,9 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
     }
+    
     override func didReceiveMemoryWarning() {
            super.didReceiveMemoryWarning()
            print("Память утекает AuthViewController")
@@ -44,8 +45,6 @@ class AuthViewController: UIViewController {
             if username == loginTextField.text!.uppercased()
                 && pass == passwordTextField.text!{
                 authFlg = true
-                //let UserViewController = storyboard?.instantiateViewController(identifier: "UsersViewController")
-                //navigationController?.pushViewController(UserViewController!, animated: true)
                 let MainViewController = MainViewController(contactid: id , nibName: "MainViewController", bundle: self.nibBundle)
                 navigationController?.pushViewController(MainViewController, animated: true)
                 break

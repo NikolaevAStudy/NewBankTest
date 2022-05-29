@@ -19,6 +19,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bDf-ha-XkP">
                                 <rect key="frame" x="1" y="45" width="414" height="850"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" red="0.81568627449999997" green="0.27450980390000002" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="Cell" textLabel="C2m-Ze-p2o" detailTextLabel="Plh-W5-zgg" style="IBUITableViewCellStyleValue1" id="aTr-us-ym6">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
@@ -52,7 +53,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kx4-Gi-vVd"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.81568627450980391" green="0.27450980392156865" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bDf-ha-XkP" firstAttribute="leading" secondItem="kx4-Gi-vVd" secondAttribute="leading" constant="1" id="VPc-fr-hla"/>
                             <constraint firstItem="bDf-ha-XkP" firstAttribute="top" secondItem="kx4-Gi-vVd" secondAttribute="top" constant="1" id="iRe-D9-Maj"/>
@@ -85,6 +86,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cxD-KB-bdi">
                                 <rect key="frame" x="1" y="45" width="414" height="850"/>
+                                <color key="sectionIndexBackgroundColor" red="0.81568627449999997" green="0.27450980390000002" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="1tU-uE-b6G" detailTextLabel="Xx5-yo-lan" style="IBUITableViewCellStyleValue1" id="q71-Qf-Xfj">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
@@ -119,7 +121,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.81568627450980391" green="0.27450980392156865" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cxD-KB-bdi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="1" id="7tR-C0-GUD"/>
                             <constraint firstAttribute="bottom" secondItem="cxD-KB-bdi" secondAttribute="bottom" constant="1" id="QRf-Ng-naM"/>
@@ -207,7 +209,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <color key="backgroundColor" red="0.81568627450980391" green="0.27450980392156865" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="PIL-aw-5Dg" secondAttribute="trailing" constant="10" id="7sk-s6-lyx"/>
                                     <constraint firstItem="YIM-mX-2Lr" firstAttribute="top" secondItem="NlZ-K5-wfI" secondAttribute="top" constant="30" id="Cgs-I9-SJb"/>
@@ -227,7 +229,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rl6-De-TdU"/>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <color key="backgroundColor" red="0.81568627450980391" green="0.27450980392156865" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NlZ-K5-wfI" firstAttribute="centerX" secondItem="rl6-De-TdU" secondAttribute="centerX" id="Vb0-9B-p2i"/>
                             <constraint firstItem="NlZ-K5-wfI" firstAttribute="top" secondItem="rl6-De-TdU" secondAttribute="top" constant="150" id="Xz1-0N-Cve"/>
@@ -265,9 +267,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

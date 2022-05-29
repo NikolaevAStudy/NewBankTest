@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="NewBankTest" customModuleProvider="target">
             <connections>
                 <outlet property="cardsTableView" destination="1bf-yw-cIX" id="dUt-an-UvY"/>
+                <outlet property="currencyLabel" destination="mlx-Ue-Tw6" id="fy2-nR-veM"/>
                 <outlet property="nameLabel" destination="S8z-kN-vZb" id="jx2-iZ-AJp"/>
                 <outlet property="userButton" destination="svH-A8-Zuj" id="G2J-AR-B6K"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="ynD-st-8dl"/>
@@ -47,10 +48,22 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Li8-p3-tyg">
                     <rect key="frame" x="20" y="370" width="170" height="150"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlx-Ue-Tw6">
+                            <rect key="frame" x="8" y="8" width="154" height="134"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="mlx-Ue-Tw6" secondAttribute="trailing" constant="8" id="1vD-37-mdt"/>
                         <constraint firstAttribute="width" constant="170" id="35V-zE-x0D"/>
+                        <constraint firstAttribute="bottom" secondItem="mlx-Ue-Tw6" secondAttribute="bottom" constant="8" id="Rxf-FT-C36"/>
                         <constraint firstAttribute="height" constant="150" id="UmM-Vz-RSx"/>
+                        <constraint firstItem="mlx-Ue-Tw6" firstAttribute="top" secondItem="Li8-p3-tyg" secondAttribute="top" constant="8" id="Uov-tz-K1A"/>
+                        <constraint firstItem="mlx-Ue-Tw6" firstAttribute="leading" secondItem="Li8-p3-tyg" secondAttribute="leading" constant="8" id="hdQ-hY-v2y"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AqR-uI-Qx6">
@@ -88,7 +101,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemRedColor"/>
+            <color key="backgroundColor" red="0.81544197749609904" green="0.27600375231532132" blue="0.33722145138294646" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="WFH-7V-at6" firstAttribute="top" secondItem="S8z-kN-vZb" secondAttribute="bottom" constant="20" id="0dL-K2-5d2"/>
                 <constraint firstItem="AqR-uI-Qx6" firstAttribute="top" secondItem="WFH-7V-at6" secondAttribute="bottom" constant="30" id="6h6-um-JIm"/>
@@ -109,9 +122,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

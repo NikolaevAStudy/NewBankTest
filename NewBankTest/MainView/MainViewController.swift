@@ -7,11 +7,13 @@
 
 import UIKit
 import CoreData
+import Foundation
 
 class MainViewController: UIViewController {
 
     @IBOutlet weak var cardsTableView: UITableView!
     
+    @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var userButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -35,14 +37,10 @@ class MainViewController: UIViewController {
         users = fetchRecord(entityName: "Contact", searchSpec: " id == %@", valueForSerch: contactid)
         asset = fetchRecord(entityName: "Asset", searchSpec: " contactid == %@", valueForSerch: contactid)
         let fio = getFIO()
+        getCurrency()
         nameLabel.text = fio
     }
-    private func getFIO() ->String{
-        let lastName = users[0].value(forKeyPath: "lastname") as! String
-        let firstName = users[0].value(forKeyPath: "firstname") as! String
-        let middleName = users[0].value(forKeyPath: "middlename") as! String
-        return lastName + " " + firstName + " " + middleName
-    }
+    
     override func didReceiveMemoryWarning() {
            super.didReceiveMemoryWarning()
            print("Память утекает MainViewController")
@@ -63,6 +61,37 @@ class MainViewController: UIViewController {
                 self.viewCollections[viewInd].center.x += 500
             }
         })
+    }
+    
+    // MARK: - currency course
+    private func getCurrency() {
+        var curr :  [String : Any] = [:]
+        var currvalUSD :  [String : Any] = [:]
+        var currvalEUR :  [String : Any] = [:]
+        let url = URL(string: "https://www.cbr-xml-daily.ru/daily_json.js")!
+        let request = URLRequest(url: url)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])  as? [String: Any]
+            DispatchQueue.main.async(execute: { [self] in
+                curr = responseJSON!["Valute"] as! [String : Any]
+                currvalUSD = curr["USD"] as! [String : Any]
+                currvalEUR = curr["EUR"] as! [String : Any]
+                currencyLabel.text = "USD: \(currvalUSD["Value"] ?? "error") \n EUR: \(currvalEUR["Value"] ?? "error")"
+            })
+        }
+        task.resume()
+    }
+    
+    // MARK: - FIO from CoreData
+    private func getFIO() ->String{
+        let lastName = users[0].value(forKeyPath: "lastname") as! String
+        let firstName = users[0].value(forKeyPath: "firstname") as! String
+        let middleName = users[0].value(forKeyPath: "middlename") as! String
+        return lastName + " " + firstName + " " + middleName
     }
     
     // MARK: - fetch
@@ -86,6 +115,7 @@ class MainViewController: UIViewController {
         
     }
     
+    // MARK: - Open Users View
     @IBAction func openUserView(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let resultViewController = storyBoard.instantiateViewController(withIdentifier: "UsersViewController")
