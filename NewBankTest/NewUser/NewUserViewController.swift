@@ -15,7 +15,7 @@ class NewUserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemRed
+        view.backgroundColor = UIColor(red: 208/255, green: 70/255, blue: 86/255, alpha: 1.0)
         createLabel(text: "Логин",x: -50,y:-300,id: "LoginLabel")
         createInput(x: 50,y:-300,id: "LoginInput")
         createLabel(text: "Пароль",x: -50,y:-250,id: "PasswordLabel")
@@ -64,6 +64,7 @@ class NewUserViewController: UIViewController {
         button.setTitle("Добавить", for: .normal)
         button.restorationIdentifier = "AddNewUserButton"
         button.addTarget(self, action: #selector(addNewUser), for: .touchUpInside)
+        button.tintColor = .black
         view.addSubview(button)
                 //позиционирование
                 button.translatesAutoresizingMaskIntoConstraints = false

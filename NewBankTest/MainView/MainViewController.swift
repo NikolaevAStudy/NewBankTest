@@ -34,6 +34,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 208/255, green: 70/255, blue: 86/255, alpha: 1.0)
         users = fetchRecord(entityName: "Contact", searchSpec: " id == %@", valueForSerch: contactid)
         asset = fetchRecord(entityName: "Asset", searchSpec: " contactid == %@", valueForSerch: contactid)
         let fio = getFIO()
