@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 import Foundation
 
-class MainViewController: UIViewController {
+class MainViewController: CustomViewController {
 
     @IBOutlet weak var cardsTableView: UITableView!
     
@@ -34,7 +34,6 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 208/255, green: 70/255, blue: 86/255, alpha: 1.0)
         users = fetchRecord(entityName: "Contact", searchSpec: " id == %@", valueForSerch: contactid)
         asset = fetchRecord(entityName: "Asset", searchSpec: " contactid == %@", valueForSerch: contactid)
         let fio = getFIO()
@@ -66,6 +65,7 @@ class MainViewController: UIViewController {
     
     // MARK: - currency course
     private func getCurrency() {
+        let RUB = "\u{20BD}"
         var curr :  [String : Any] = [:]
         var currvalUSD :  [String : Any] = [:]
         var currvalEUR :  [String : Any] = [:]
@@ -77,11 +77,11 @@ class MainViewController: UIViewController {
                 return
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])  as? [String: Any]
-            DispatchQueue.main.async(execute: { [self] in
+            DispatchQueue.main.async(execute: { [unowned self] in
                 curr = responseJSON!["Valute"] as! [String : Any]
                 currvalUSD = curr["USD"] as! [String : Any]
                 currvalEUR = curr["EUR"] as! [String : Any]
-                currencyLabel.text = "USD: \(currvalUSD["Value"] ?? "error") \n EUR: \(currvalEUR["Value"] ?? "error")"
+                currencyLabel.text = "USD: \(currvalUSD["Value"] ?? "error")\(RUB) \nEUR: \(currvalEUR["Value"] ?? "error")\(RUB)"
             })
         }
         task.resume()

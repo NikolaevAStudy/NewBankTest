@@ -9,13 +9,12 @@ import UIKit
 import CoreData
 
 
-class NewUserViewController: UIViewController {
+class NewUserViewController: CustomViewController {
     
     var user: [NSManagedObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 208/255, green: 70/255, blue: 86/255, alpha: 1.0)
         createLabel(text: "Логин",x: -50,y:-300,id: "LoginLabel")
         createInput(x: 50,y:-300,id: "LoginInput")
         createLabel(text: "Пароль",x: -50,y:-250,id: "PasswordLabel")
@@ -34,6 +33,7 @@ class NewUserViewController: UIViewController {
         label.text = text
         label.restorationIdentifier = id
         label.tintColor = .black
+        label.font = .boldSystemFont(ofSize: 17)
         view.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
 
@@ -65,6 +65,7 @@ class NewUserViewController: UIViewController {
         button.restorationIdentifier = "AddNewUserButton"
         button.addTarget(self, action: #selector(addNewUser), for: .touchUpInside)
         button.tintColor = .black
+        button.titleLabel!.font = UIFont.boldSystemFont(ofSize: 17)
         view.addSubview(button)
                 //позиционирование
                 button.translatesAutoresizingMaskIntoConstraints = false

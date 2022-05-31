@@ -14,6 +14,12 @@ class CustomUITextField: UITextField {
         self.layer.cornerRadius = 10.0   /// радиус закругления закругление
         self.layer.borderWidth = 2.0   // толщина обводки
         self.layer.borderColor = UIColor(red: 208/255, green: 70/255, blue: 86/255, alpha: 1.0).cgColor // цвет обводки
+        self.font = .systemFont(ofSize: 14)
+        self.contentVerticalAlignment = .center
+        self.contentMode = .scaleToFill
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.borderStyle = .roundedRect
+        self.contentHorizontalAlignment = .left
         self.clipsToBounds = true  // не забудь это, а то не закруглиться
         self.tintColor = .red
     }

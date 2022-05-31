@@ -131,6 +131,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="A8w-Gd-2B1">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="5wb-mR-35F">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="addName:" destination="BYZ-38-t0r" id="Zvd-6P-IPd"/>
                             </connections>
@@ -155,22 +156,22 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NlZ-K5-wfI">
                                 <rect key="frame" x="57" y="238" width="300" height="200"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lVr-KS-Zob" customClass="CustomUITextField" customModule="NewBankTest" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lVr-KS-Zob" customClass="CustomUITextField" customModule="NewBankTest" customModuleProvider="target">
                                         <rect key="frame" x="100" y="30" width="190" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="190" id="TZu-rP-hw6"/>
                                             <constraint firstAttribute="height" constant="34" id="pX7-Gf-wlU"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="username"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PIL-aw-5Dg" customClass="CustomUITextField" customModule="NewBankTest" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PIL-aw-5Dg" customClass="CustomUITextField" customModule="NewBankTest" customModuleProvider="target">
                                         <rect key="frame" x="100" y="84" width="190" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="N8N-oa-SXs"/>
                                             <constraint firstAttribute="width" constant="190" id="nwz-aj-oLF"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Логин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIM-mX-2Lr">
@@ -253,6 +254,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8dn-G6-tUd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

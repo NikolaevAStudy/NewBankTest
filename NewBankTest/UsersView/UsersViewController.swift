@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class UsersViewController: UIViewController{
+class UsersViewController: CustomViewController{
     @IBOutlet weak var tableView: UITableView!
     var user: [NSManagedObject] = []
 

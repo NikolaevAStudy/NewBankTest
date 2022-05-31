@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class AssetViewController: UIViewController {
+class AssetViewController: CustomViewController {
     
     @IBOutlet weak var tableView: UITableView!
     

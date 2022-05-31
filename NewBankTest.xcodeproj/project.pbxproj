@@ -23,6 +23,7 @@
 		58C02F742835656F00A4FE03 /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C02F732835656F00A4FE03 /* AssetViewController.swift */; };
 		58C02F792836B1EF00A4FE03 /* Asset+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C02F772836B1EF00A4FE03 /* Asset+CoreDataClass.swift */; };
 		58C02F7A2836B1EF00A4FE03 /* Asset+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C02F782836B1EF00A4FE03 /* Asset+CoreDataProperties.swift */; };
+		58FA10A7284681C9004B7221 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA10A6284681C9004B7221 /* CustomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		58C02F732835656F00A4FE03 /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
 		58C02F772836B1EF00A4FE03 /* Asset+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asset+CoreDataClass.swift"; sourceTree = "<group>"; };
 		58C02F782836B1EF00A4FE03 /* Asset+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asset+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		58FA10A6284681C9004B7221 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		58B06B6F2822F9C900D10885 /* NewBankTest */ = {
 			isa = PBXGroup;
 			children = (
+				58FA10A8284681CE004B7221 /* Custom */,
 				58155FC8283C003B00E7D514 /* NewUser */,
 				58C02F722835654E00A4FE03 /* AssetView */,
 				58D7D6062832CDBA0027BC59 /* DefaultFiles */,
@@ -119,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				58B06B922824018D00D10885 /* AuthViewController.swift */,
-				5893D26B282A7C04006EF026 /* CustomUITextField.swift */,
 			);
 			path = AuthView;
 			sourceTree = "<group>";
@@ -151,6 +153,15 @@
 				58B06B722822F9C900D10885 /* SceneDelegate.swift */,
 			);
 			path = DefaultFiles;
+			sourceTree = "<group>";
+		};
+		58FA10A8284681CE004B7221 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				58FA10A6284681C9004B7221 /* CustomViewController.swift */,
+				5893D26B282A7C04006EF026 /* CustomUITextField.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5893D270282AC87E006EF026 /* MainViewController.swift in Sources */,
+				58FA10A7284681C9004B7221 /* CustomViewController.swift in Sources */,
 				58155FC7283C003500E7D514 /* NewUserViewController.swift in Sources */,
 				58B06B912823F37F00D10885 /* NewBankTestModel.xcdatamodeld in Sources */,
 				58B06B95282401F900D10885 /* UsersViewController.swift in Sources */,

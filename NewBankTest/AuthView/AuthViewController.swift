@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class AuthViewController: UIViewController {
+class AuthViewController: CustomViewController {
 
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
